@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Rose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <!-- dancing style -->
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <html lang="en">
+ <!-- roboto style-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            background-color: rgb(73, 20, 20);
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:rgb(121, 57, 53);
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: rgb(250, 245, 216);
+            padding: 14px 20px;
+            
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            font-weight: bold;
+        
+        }
+        .logo {
+            
+           @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+            font-size: 30px;
+            font-weight: bold;
+            
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 6px;
+            margin-right: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .search-container button {
+            padding: 6px 10px;
+            background-color:lemonchiffon;
+            color: rgb(102, 25, 25);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #fae5c7;
+            
+        }
+
+
+        .cart-link i {
+       font-size: 24px; /* Cambia el tamaño del ícono */
+       color:lemonchiffon;
+       text-replace: color 0.3s ease;
+
+                }
+
+                
+
+     .cart-link:hover i {
+            color: #fcead2;
+            /* Cambia el color cuando se pasa el ratón */
+          }
+
+
+
+          .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .card {
+            background-color: #fcf4e3;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        
+        }
+        .card:hover {
+        background-color:#fcf2d2;
+
+
+        }
+        .card img {
+            width: 300px;
+            height: 200px;
+
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin: 15px 0;
+            font-size: 1.5em;
+        }
+        .card p {
+            color: #635454;
+            font-size: 1em;
+        }
+        .card .price {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color: #7c2111;
+            color: rgb(250, 248, 223);
+            border:none;
+            padding: 10px 15px;
+            
+            
+            border-radius: 5px;
+            cursor:pointer;
+            transition: background-color 0.2s;
+        }
+        .card button:hover {
+            background-color: rgb(82, 20, 20);
+        }
+
+        footer{
+            color:lemonchiffon;
+            background-color: rgb(121, 57, 53);
+            height: 50px;
+            margin-top: 50px;
+            padding:40px;
+            padding-bottom: 80px;;
+            text-align: center;
+           font-weight: bold;
+           font-size: large;
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@100..900&display=swap');
+        }
+
+        .space{
+            padding: 1px;
+        }
+        .minospace{
+            padding: 5px;
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    
+
+<div class="navbar">
+    <a href="#" class="logo">One must buy</a>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+    <div class="search-container">
+        <input type="text" placeholder="Search products...">
+        <button type="submit">Search</button>
+    </div>
+    
+    <a href="#" class="cart-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+
+</div>
+
+<div class="container">
+    <div class="card">
+        <img src= "a cow 🐮 🤍.jpg" alt="producto 1">
+        <h3>la vaca lola </h3>
+        <div class="space">
+
+        </div>
+        <p>le dijó al lechero "págame la renta del mes de" y la vendió</p>
+        <div class="price">$6000</div>
+        <div class="space">
+
+        </div>
+        <button>Añadir al carrito</button>
+    </div>
+    
+    <div class="card">
+        <img src= "Lvlyssely on instagram.jpg" alt= "chocolate ghost" >
+        <h3>fantasma en una rebanada de pastel</h3>
+        <p>sustos que dan gusto</p>
+        <div class="space">
+
+        </div>
+        <div class="price">$250</div>
+        <button>Añadir al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="OIP.jfif"
+         alt="Producto 3">
+        <h3>condensador térmico</h3>
+        <div class="minospace">
+
+        </div>
+        <p>por si te gusta tu pastel húmedo</p>
+        <div class="space">
+
+        </div>
+        <div class="price">$8000</div>
+        <div class="space">
+
+        </div>
+        <button>Añadir al carrito</button>
+    </div>
+</div>
+
+<footer>
+    
+
+    <p>
+        desarrollado por Rose Gamboa y un gansito congelado
+    </p>
+
+    <p>
+        hola mundo
+    </p>
+ 
+
+
+</footer>
+
+</body>
+</html>
+
+
