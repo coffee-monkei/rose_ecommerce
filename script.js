@@ -7,7 +7,7 @@ const titulo= "Productos"
 
 
 
-
+function MyCards () {
 let cards= [];
 
 for (let i=1; i<=9; i++) {
@@ -17,7 +17,7 @@ for (let i=1; i<=9; i++) {
     <div class="card-body">
       <h5 class="card-title">modelo ${i}</h5>
       <p class="card-text">único en existencia</p>
-      <a href="#" class="btn btn-primary">añadir al carrito</a>
+      <button> ver más </button>
     </div>
   </div>`
     
@@ -28,4 +28,10 @@ for (let i=1; i<=9; i++) {
 
     
 } 
-document.querySelector(".container").innerHTML = cards.join('');
+
+
+document.querySelector(".container").innerHTML = cards.join().replaceAll(",", "");
+
+}
+
+MyCards();
