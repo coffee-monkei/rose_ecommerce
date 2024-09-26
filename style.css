@@ -1,0 +1,52 @@
+
+body {
+    background-color: rgb(73, 20, 20);
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Estilos para la card */
+ .card {
+    border: 3px solid #fdd3d3;
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    padding: 10px;
+
+  }
+  
+  
+  
+  img {
+    width: 100%;
+    height: 200px;
+
+  }
+  
+  
+  h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .btn btn-primary {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn btn-primary:hover {
+    background-color: #0056b3;
+  }
