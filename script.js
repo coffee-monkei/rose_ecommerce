@@ -16,8 +16,10 @@ for (let i=1; i<=9; i++) {
     <img src="https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/${i}.jpg" class="card-img-top" alt="carro${i}">
     <div class="card-body">
       <h5 class="card-title">modelo ${i}</h5>
-      <p class="card-text">único en existencia</p>
-      <button> ver más </button>
+      <p class="card-text">descripción</p>
+      <button onclick="location.href= 'producto.html'"> ver más </button>
+      
+
     </div>
   </div>`
     
@@ -35,3 +37,4 @@ document.querySelector(".container").innerHTML = cards.join().replaceAll(",", ""
 }
 
 MyCards();
+
