@@ -111,7 +111,7 @@ for (let menu of shop){
     productos.push(nuevoProducto);
 }
 
-document.querySelector("header").innerHTML =  productos;
+document.querySelector(".divcate").innerHTML =  productos;
 
 
 
