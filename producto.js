@@ -113,7 +113,38 @@ main.innerHTML = `
             <p>${productoclick.detail}.detalle}</p>
             <p>Precio: $${productoclick.price}</p>
             <p>Stock: ${productoclick.stock} unidades disponibles</p>
-            <a href="index.html" class="btn btn-primary" > Comprar</a>
-        </div>
-    </div>
-`;
+            ${localStorage.getItem("email") ?
+            `<button class="button" onclick="decrease()">-</button>
+    <span class="quantity" id="quantity">0</span>
+    <button class="button" onclick="increase()">+</button>
+    <button class="buy-button">Comprar</button>
+`
+
+ : 
+    `<div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" type="button" onclick="window.location.href='login.html'">Inciar sesión para comprar</button>
+  
+</div>`
+
+
+            
+            
+            }
+
+             </div>
+    </div> `
+    
+            
+    let quantity = 0;
+
+    function increase() {
+        quantity++;
+        document.getElementById("quantity").innerText = quantity;
+    }
+
+    function decrease() {
+        if (quantity > 0) {
+            quantity--;
+            document.getElementById("quantity").innerText = quantity;
+        }
+    }
