@@ -1,36 +1,4 @@
-/*class producto{
-    constructor(titulo, detalle, precio, stock, imagen){
-      
-      this.titulo=titulo;
-      this.detalle=detalle;
-      this.precio=precio;
-      this.stock=stock;
-      this.imagen=imagen;
-  
-    }
-  }
-  
-  const MyCard= new producto("mercedes mango compacto suv", "color mango de una semana", "$800,000", 4, "https://external-preview.redd.it/uz7ncWMQ2orvzbz5CT5pgIHVsJ7Xs4o0OCaYiUTpw5Q.jpg?auto=webp&s=0da9ef37da608cadd4d4d3e18013e96c45660ea7" )
- 
 
-  let main = document.querySelector('main');
-main.innerHTML = `
-    <div class="card">
-        <img src="${MyCard.imagen}" alt="${MyCard.titulo}">
-        <div class="card-body">
-            <h1 >${MyCard.titulo}</h1>
-            <p>${MyCard.detalle}</p>
-            <p>Precio: $${MyCard.precio}</p>
-            <p>Stock: ${MyCard.stock} unidades disponibles</p>
-            <a href="index.html" class="btn btn-primary" > Comprar</a>
-        </div>
-    </div>
-`;
-*/
-/*Usar el array de Mockaroo en producto.js asignandolo a la variable data.
-Filtrarlo por el número de producto obtenido con window.location.
-Lograr que el producto mostrado cambie dependiendo del número de producto en la URL.
-  */
  let  data=[{
   id: 1,
   title: "mermelada frutos rojos",
@@ -117,7 +85,7 @@ main.innerHTML = `
             `<button class="button" onclick="decrease()">-</button>
     <span class="quantity" id="quantity">0</span>
     <button class="button" onclick="increase()">+</button>
-    <button class="buy-button">Comprar</button>
+    <button class="buy-button" onclick="cart()">Comprar</button>
 `
 
  : 
@@ -137,9 +105,15 @@ main.innerHTML = `
             
     let quantity = 0;
 
+
     function increase() {
+      
+      if (quantity  < productoclick.stock){
         quantity++;
         document.getElementById("quantity").innerText = quantity;
+
+      }
+        
     }
 
     function decrease() {
@@ -148,3 +122,53 @@ main.innerHTML = `
             document.getElementById("quantity").innerText = quantity;
         }
     }
+
+
+
+    
+
+  function  cart(){
+    let carrito= JSON.parse(localStorage.getItem("cart"))
+    const idProduct= Number(window.location.search.split("=")[1])
+    const producto = data.find(item => item.id === idProduct); //devuelve el producto que compraste en array
+    const existe= carrito.some(item => item.producto.id === idProduct);//devuelve true o falso si en el carrito el id del producto es igual que al que queremos comprar.
+    console.log(existe);
+    console.log(producto);
+
+    
+
+    
+
+    if(existe){
+      carrito = carrito.map(item =>{
+        if(item.producto.id===idProduct){
+          return{...item, quantity: item.quantity + quantity}
+        } else{
+          return item;
+        }
+      })
+    }
+
+      else{
+        carrito.push({producto: producto, quantity: quantity});
+      }
+      localStorage.setItem("cart", JSON.stringify(carrito));
+      let cantidad= carrito.reduce((acumulado, actual) => acumulado + actual.quantity , 0 );
+      console.log(cantidad);
+       localStorage.setItem("quantity", cantidad);
+      
+
+
+
+
+
+    }
+    
+    
+    
+    
+    //carrito.push({id: idProduct, quantity: quantity});
+   
+     
+
+  

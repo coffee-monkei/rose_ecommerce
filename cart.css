@@ -1,0 +1,14 @@
+.btn {
+  background-color: #ffcece; /* Color rosado suave con un toque vintage */
+  color: #5c4343; /* Texto en blanco */
+  font-size: 12px;
+  padding: 5px 15px; /* Tamaño del botón */
+  border: 2px solid #b48787; /* Borde suave */
+  border-radius: 10px; /* Bordes ligeramente redondeados */
+  cursor: pointer;
+  
+}
+
+.btn:hover{
+  background-color: #fc8c8cf8;
+}

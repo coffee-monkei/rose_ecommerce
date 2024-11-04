@@ -19,6 +19,9 @@ function login (event){
         localStorage.setItem("password", USER_LOG.password);
         localStorage.setItem("email", USER_LOG.email);
         localStorage.setItem("loggedIn", USER_LOG.loggedIn);
+      localStorage.setItem("cart", JSON.stringify([]));
+        localStorage.setItem("quantity", "0");
+
         console.log("email y contraseña correctos");
 
         window.location.href="index.html";

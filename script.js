@@ -109,7 +109,7 @@ function sprint() {
       
 
     </div> 
-    </div>`);
+    </div>`)
   container.innerHTML = cards.join("");
 
   function registrarConsola(event){
