@@ -107,7 +107,7 @@ console.log(total);
 
 mango= document.getElementById("total");
 mango.innerHTML=`      <div class="col-sm-6">
-       <button class="btn">Seguir comprando</button>
+       <button class="btn" onclick="continueComprar()">Seguir comprando</button>
       </div>
       <div class="col-sm-6">
        <div class="text-sm-end mt-2 mt-sm-0">
@@ -175,4 +175,8 @@ console.log(elemento.id);
     location.reload();
     localStorage.setItem("quantity", 0);
 
+   }
+
+   function continueComprar(){
+    window.location.href="index.html";
    }
