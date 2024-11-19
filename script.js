@@ -110,7 +110,24 @@ function sprint() {
 
     </div> 
     </div>`)
-  container.innerHTML = cards.join("");
+
+
+   container.innerHTML= "cargando...";
+  
+   function esperar(ms) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(cards);
+        }, ms);
+    });
+}
+esperar(3000).then((result) => {
+  container.innerHTML= result; // "Han pasado 2000 milisegundos"
+});
+
+
+  
+  //container.innerHTML = cards.join(""); //grillas
 
   function registrarConsola(event){
     console.log(event.target.value);

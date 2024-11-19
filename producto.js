@@ -83,16 +83,19 @@ main.innerHTML = `
             <p>Stock: ${productoclick.stock} unidades disponibles</p>
             ${localStorage.getItem("email") ?
             `<button class="button" onclick="decrease()">-</button>
-    <span class="quantity" id="quantity">0</span>
+    <span class="quantity" id="quantity">1</span>
     <button class="button" onclick="increase()">+</button>
-    <button class="buy-button" onclick="cart()">Comprar</button>
+    <button class="buy-button" onclick="cart()">Comprar <span class="material-symbols-outlined">
+add_shopping_cart
+</span></button>
 `
 
  : 
     `<div class="d-grid gap-2 col-6 mx-auto">
   <button class="btn btn-primary" type="button" onclick="window.location.href='login.html'">Inciar sesión para comprar</button>
   
-</div>`
+</div>
+`
 
 
             
@@ -103,7 +106,7 @@ main.innerHTML = `
     </div> `
     
             
-    let quantity = 0;
+    let quantity = 1;
 
 
     function increase() {
@@ -117,7 +120,7 @@ main.innerHTML = `
     }
 
     function decrease() {
-        if (quantity > 0) {
+        if (quantity > 1) {
             quantity--;
             document.getElementById("quantity").innerText = quantity;
         }
@@ -128,7 +131,8 @@ main.innerHTML = `
     
 
   function  cart(){
-    let carrito= JSON.parse(localStorage.getItem("cart"))
+    function add(){
+      let carrito= JSON.parse(localStorage.getItem("cart"))
     const idProduct= Number(window.location.search.split("=")[1])
     const producto = data.find(item => item.id === idProduct); //devuelve el producto que compraste en array
     const existe= carrito.some(item => item.producto.id === idProduct);//devuelve true o falso si en el carrito el id del producto es igual que al que queremos comprar.
@@ -150,7 +154,12 @@ main.innerHTML = `
     }
 
       else{
+        if(quantity >=1){
         carrito.push({producto: producto, quantity: quantity});
+
+
+        }
+        
       }
       localStorage.setItem("cart", JSON.stringify(carrito));
       let cantidad= carrito.reduce((acumulado, actual) => acumulado + actual.quantity , 0 );
@@ -158,6 +167,35 @@ main.innerHTML = `
        localStorage.setItem("quantity", cantidad);
       
 
+    }
+
+    Swal.fire({
+      
+      text: '¿Estás seguro de que querés agregar el producto al carrito?',
+      
+      confirmButtonText: 'Si',
+      cancelButtonText: "Ay no se! tengo miedo",
+      showCancelButton: true,
+      showCloseButton: true,
+      confirmButtonColor: "#CBE354",
+      cancelButtonColor: "#E7A7A7"
+
+    }).then(result =>{
+      if (result.isConfirmed){
+        add();
+        Toastify({
+
+          text: "Agregaste productos al carrito de compras",
+          
+          style:{
+            background:"#F89595",
+            
+          },
+          
+          }).showToast();
+      }
+    })
+    
 
 
 

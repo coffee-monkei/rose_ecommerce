@@ -108,6 +108,7 @@ console.log(total);
 mango= document.getElementById("total");
 mango.innerHTML=`      <div class="col-sm-6">
        <button class="btn" onclick="continueComprar()">Seguir comprando</button>
+       <button class="btn" onclick="checkout()">Realizar compra</button>
       </div>
       <div class="col-sm-6">
        <div class="text-sm-end mt-2 mt-sm-0">
@@ -158,8 +159,8 @@ console.log(elemento.id);
 
     localStorage.setItem("cart", JSON.stringify(keep))
     
-
-    location.reload();
+  window.location.href="cart.html";
+   // location.reload();
 
    
 
@@ -180,3 +181,54 @@ console.log(elemento.id);
    function continueComprar(){
     window.location.href="index.html";
    }
+
+   function checkout(){
+    const email = localStorage.getItem("email");
+    const cart = JSON.parse(localStorage.getItem("cart")); 
+    const recurso= {
+
+        user:email,
+        
+        items: cart,
+
+
+    }
+    fetch("https://673bcb3496b8dcd5f3f77e4f.mockapi.io/rose/orders",  {
+        method:"POST",
+        headers: { "Content-Type": "application/json" },
+        body:JSON.stringify(recurso),
+    
+    })
+    .then(response=>response.json())
+    .then(data=>
+
+    Swal.fire({
+        text: ` Gracias, ${email}. Hemos registrado tu orden número #${data.id} `,
+        confirmButtonText: "Si",
+        confirmButtonColor: "#CBE354",
+       }).then(result =>{
+        if(result.isConfirmed){
+            vaciar()
+        }
+       })
+    .catch(() => Swal.fire({
+        text: "Ups, hubo un error, intentelo más tarde",
+        confirmButtonText: "Si",
+        confirmButtonColor: "#825286",
+
+    })))
+
+   
+
+
+
+
+   }
+
+  
+
+
+   
+  
+  
+  
