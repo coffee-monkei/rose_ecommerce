@@ -96,7 +96,7 @@ function sprint() {
 
   const cards = data.map((producto) =>
     
-    `<div class="card" style="width: 18rem;">
+    `<div class="card" style="width: 25rem; height:16rem;">
     <img src="${producto.img}" class="card-img-top" alt="${producto.title}">
     <div class="card-body">
       <h5 class="card-title"> ${producto.title}</h5>
